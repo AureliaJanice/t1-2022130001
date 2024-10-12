@@ -40,21 +40,6 @@ class ProductController extends Controller
             'quantity' => 'required | integer| min:0',
         ]);
 
-        // $model = new Product();
-        // $model->product_name = $request->product_name;
-        // $model->description = $request->description;
-        // $model->retail_price = $request->retail_price;
-        // $model->wholesale_price = $request->wholesale_price;
-        // $model->origin = $request->origin;
-        // $model->quantity = $request->quantity;
-
-        // if ($request->hasFile('product_image')) {
-        //     $model->product_image = $request->file('product_image')->store('images', 'public');
-        // }
-
-        // $model->save();
-
-        // return redirect()->route('products.index')->with('success', 'Product created successfully!');
 
         //simpen ke db
         if ($request->hasFile('product_image')) {
@@ -143,8 +128,6 @@ class ProductController extends Controller
             $validated['product_image'] = $imagePath;
         }
 
-        // $product->update($request->all());
-        // $product->save();
 
         $product->update([
             'product_name' => $validated['product_name'],
