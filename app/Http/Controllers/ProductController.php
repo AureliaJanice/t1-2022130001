@@ -106,8 +106,8 @@ class ProductController extends Controller
         $validated = $request->validate([
             'product_name' => 'required | string | max:225',
             'description' => 'nullable | string | max:255',
-            'retail_price' => 'required | numeric | min:0.0 | max:9999999',
-            'wholesale_price' => 'required | numeric | min:0.0 | max:9999999 | lte:retail_price',
+            'retail_price' => 'required | numeric | min:0.0 | max:99999999',
+            'wholesale_price' => 'required | numeric | min:0.0 | max:99999999 | lte:retail_price',
             'origin' => 'required  | string | min:1',
             'quantity' => 'required | integer| min:0',
             'product_image' => ' image | mimes:jpeg,png,jpg,giF,svg | max:2048'
